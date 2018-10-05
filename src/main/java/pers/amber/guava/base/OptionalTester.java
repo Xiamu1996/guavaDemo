@@ -1,4 +1,4 @@
-package pers.amber.guava.optional;
+package pers.amber.guava.base;
 
 import com.google.common.base.Optional;
 
@@ -34,9 +34,9 @@ public class OptionalTester {
     }
 
     private void testIsPresent(){
-        assert optional1.isPresent() == true;
-        assert optional3.isPresent() == false;
-        assert optional4.isPresent() == false;
+        assert optional1.isPresent();
+        assert !optional3.isPresent();
+        assert !optional4.isPresent();
     }
 
     private void testGet(){
@@ -63,7 +63,7 @@ public class OptionalTester {
         // 若引用缺失，返回null
         // 如果引用存在，返回一个只有单一元素的集合，如果引用缺失，返回一个空集合
         assert optional1.asSet().size() == 1;
-        assert optional3.asSet().isEmpty() == true;
+        assert optional3.asSet().isEmpty();
     }
 
 
